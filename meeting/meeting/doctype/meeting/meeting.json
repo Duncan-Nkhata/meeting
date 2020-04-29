@@ -1,0 +1,172 @@
+{
+ "autoname": "field:title",
+ "creation": "2020-04-09 17:28:10.813328",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "status",
+  "show_in_website",
+  "page_name",
+  "parent_website_route",
+  "column_break_3",
+  "date",
+  "from_time",
+  "to_time",
+  "agenda_section",
+  "description",
+  "attendee_section",
+  "attendees",
+  "invitation_section",
+  "invitation_message",
+  "send_emails",
+  "minutes_section",
+  "minutes",
+  "more_information_section"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Planned\nInvitation Sent\nIn Progress\nCompleted\nCancelled",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "show_in_website",
+   "fieldtype": "Check",
+   "label": "Show In Website"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "agenda_section",
+   "fieldtype": "Section Break",
+   "label": "Agenda"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Table",
+   "label": "Description",
+   "options": "Meeting Agenda",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "attendee_section",
+   "fieldtype": "Section Break",
+   "label": "Attendees"
+  },
+  {
+   "fieldname": "attendees",
+   "fieldtype": "Table",
+   "label": "Attendees",
+   "options": "Meeting Attendee",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "invitation_section",
+   "fieldtype": "Section Break",
+   "label": "Invitation"
+  },
+  {
+   "fieldname": "invitation_message",
+   "fieldtype": "Text Editor",
+   "label": "Invitation Message"
+  },
+  {
+   "depends_on": "eval:doc.status===\"Planned\"",
+   "fieldname": "send_emails",
+   "fieldtype": "Button",
+   "label": "Send Emails"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "minutes_section",
+   "fieldtype": "Section Break",
+   "label": "Minutes"
+  },
+  {
+   "fieldname": "minutes",
+   "fieldtype": "Table",
+   "label": "Minutes",
+   "options": "Meeting Minute"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_information_section",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "page_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Page Name",
+   "read_only": 1
+  },
+  {
+   "default": "Meeting",
+   "fieldname": "parent_website_route",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Parent Website Route",
+   "read_only": 1
+  }
+ ],
+ "modified": "2020-04-21 18:14:08.233366",
+ "modified_by": "Administrator",
+ "module": "Meeting",
+ "name": "Meeting",
+ "owner": "adam@thebantoo.com",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Meeting Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
